@@ -1,0 +1,16 @@
+function substituirElemento(array, valorAntigo, novoValor) {
+    array.forEach((elemento, index) => {
+        if (elemento === valorAntigo) {
+            array[index] = novoValor;
+        }
+    });
+
+    return array;
+}
+
+
+const numeros = [1, 2, 3, 1, 4];
+
+const resultado = substituirElemento(numeros, 1, 99);
+
+console.log(resultado);
