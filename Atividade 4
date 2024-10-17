@@ -1,0 +1,20 @@
+function ehPalindromo(str) {
+    
+    const formatada = str.replace(/\s+/g, '').toLowerCase();
+    const length = formatada.length;
+
+    
+    for (let i = 0; i < Math.floor(length / 2); i++) {
+        if (formatada[i] !== formatada[length - 1 - i]) {
+            return false; 
+        }
+    }
+
+    return true; 
+}
+
+console.log(ehPalindromo('eva, asse essa ave')); 
+
+console.log(ehPalindromo('diz a Verdade')); 
+
+console.log(ehPalindromo('osso')); 
