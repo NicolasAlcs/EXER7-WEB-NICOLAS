@@ -1,0 +1,30 @@
+function multiplicarMatrizes(matrizA, matrizB) {
+    const linhasA = matrizA.length;
+    const colunasA = matrizA[0].length;
+    const colunasB = matrizB[0].length;
+
+    if (colunasA !== matrizB.length) {
+        throw new Error("O número de colunas da primeira matriz tem que ser igual ao número de linhas da segunda.");
+    }
+
+    return matrizA.map((linhaA) => {
+        return Array.from({ length: colunasB }, (_, j) => {
+            return linhaA.reduce((soma, elemento, k) => soma + elemento * matrizB[k][j], 0);
+        });
+    });
+}
+
+
+const matriz1 = [
+    [4, 3],
+    [2, 1]
+];
+
+const matriz2 = [
+    [9, 8],
+    [7, 4]
+];
+
+const resultadoMultiplicacao = multiplicarMatrizes(matriz1, matriz2);
+
+console.log(resultadoMultiplicacao);
