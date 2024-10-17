@@ -1,0 +1,16 @@
+function somaMatriz(matriz) {
+    return matriz.reduce((somaTotal, linha) => {
+
+        return somaTotal + linha.reduce((somaLinha, elemento) => somaLinha + elemento, 0);
+
+    }, 0);
+}
+
+
+const matriz = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+];
+
+console.log(somaMatriz(matriz));
